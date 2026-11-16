@@ -56,7 +56,7 @@ define rule_ld_vmlinux.o
 	$(call cmd,gen_objtooldep)
 endef
 
-init/version-timestamp.o:
+init/version-timestamp.o: FORCE
 	$(Q)$(MAKE) $(build)=init $@
 
 vmlinux.o: $(initcalls-lds) vmlinux.a init/version-timestamp.o $(KBUILD_VMLINUX_LIBS) FORCE
